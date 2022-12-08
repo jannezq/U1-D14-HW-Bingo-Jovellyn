@@ -1,17 +1,19 @@
-// GLOBAL VARIABLE
-
-let randomNumberBoxs = [];
-let calledNumbers = [];
-
 //============================
 
 function randomGenerate() {
-  let randomNumber = Math.floor(Math.random() * 76) + 1;
-  calledNumbers.push(randomNumber);
+  let min = 1;
+  let max = 76;
+  let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  return randomNumber;
+}
 
-  if (calledNumbers.includes(randomNumber));
+function markedNumber() {
+  let random = randomGenerate();
+  let markedNode = document.querySelectorAll(".bingoNum")[random - 1];
+  console.log(markedNode);
 
-  console.log(calledNumbers);
+  markedNode.classList.add("marked");
+  //markedNode.style.background = "white";
 }
 
 function onLoadActions() {
@@ -20,13 +22,18 @@ function onLoadActions() {
     let boxNode = document.createElement("div");
 
     //add class name and
-    boxNode.classList.add("box");
+    boxNode.classList.add("bingoNum");
     boxNode.innerText = box;
-    //boxNode.addEventListener('click', onBoxClick);
+    //boxNode.addEventListener("click", onBoxClick);
 
     //append it and place in bingo table
     document.getElementById("bingo-table").appendChild(boxNode);
   }
+}
+
+function onBoxClick(event) {
+  let selectedNumber = event.target;
+  selectedNumber.classList.add("marked");
 }
 
 window.onload = onLoadActions;

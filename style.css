@@ -1,6 +1,8 @@
 body{
     margin: 0 auto;
     text-align: center;
+    background-color: burlywood;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #main-container{
@@ -10,26 +12,30 @@ body{
 
 #bingo-table{
     margin-top: 10px;
-    padding-top: 10px;
+    padding-top: 20px;
     margin-inline: auto;
-    width: 1000px;
-    height: 100vh;
-    background-color: bisque;
+    width: 1300px;
+    height: 800px;
+    background-color: #825433;
     display: inline-block;
+    border-radius: 20px;
 }
 
-.box{
+.bingoNum{
     width: 100px;
     height: 100px;
-    border: 2px solid chocolate;
+    border: 2px solid #ffffff;
     display: inline-block;
     border-radius: 5px;
     text-align: center;
     line-height: 100px;
-    
+    color: #fccaa7;
     margin: 3px;
 }
 
-.called{
-    background-color: darksalmon;
+.marked{
+    background-color: #473528;
+    box-shadow: 2px 2px #473528 ;
+    color: #fff;
+    border: 2px solid #804b26;
 }
